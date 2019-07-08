@@ -1,0 +1,22 @@
+<h1>物件一覧</h1>
+  <table>
+    <tr>
+      <th>物件名</th>
+      <th>賃料</th>
+      <th>住所</th>
+      <th>築年数</th>
+      <th>備考</th>
+    </tr>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.name %></td>
+        <td><%= room.price %>円</td>
+        <td><%= room.address %></td>
+        <td><%= room.age %>年</td>
+        <td><%= room.comment %></td>
+        <td><%= link_to "詳細",room_path(room.id) %></td>
+        <td><%= link_to "編集",edit_room_path(room.id) %></td>
+        <td><%= link_to "削除",room_path(room.id), method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>

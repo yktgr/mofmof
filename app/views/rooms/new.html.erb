@@ -1,0 +1,23 @@
+<h1>登録</h1>
+
+<h2>物件一覧</h2>
+<%= form_for(@room = Room.new) do |f| %>
+  <ul>
+    <li><%= f.label :物件名 %></li>
+    <li><%= f.text_field :name %></li>
+
+    <li><%= f.label :賃料 %></li>
+    <li><%= f.text_field :price %>円</li>
+
+    <li><%= f.label :住所 %></li>
+    <li><%= f.text_field :address %></li>
+
+    <li><%= f.label :築年数 %></li>
+    <li><%= f.text_field :age %>年</li>
+
+    <li><%= f.label :備考 %></li>
+    <li><%= f.text_area :comment %></li>
+
+    <li><%= f.submit "登録する" %></li>
+  </ul>
+<% end %>

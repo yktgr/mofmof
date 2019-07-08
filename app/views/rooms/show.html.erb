@@ -1,0 +1,17 @@
+<h1>閲覧</h1>
+  <table>
+    <tr><th>物件名:</th></tr>
+    <tr><td><%= @room.name %></td></tr>
+
+    <tr><th>賃料:</th></tr>
+    <tr><td><%=  @room.price %>円</td></tr>
+
+    <tr><th>住所:</th></tr>
+    <tr><td><%=  @room.address %></td></tr>
+
+    <tr><th>築年数:</th></tr>
+    <tr><td><%= @room.age %>年</td></tr>
+
+    <tr><th>備考:</th></tr>
+    <tr><td><%= @room.comment %></td></tr>
+  </table>
