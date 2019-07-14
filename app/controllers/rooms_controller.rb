@@ -6,14 +6,15 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    2.times{@room.places.build}
   end
 
   def create
-    @room = Room.new(params_room)
+    @room = Room.new(room_params)
     if @room.save
-      redirect_to rooms_path,notice:"登録しました"
+      redirect_to rooms_path
     else
-      reder 'new'
+      render 'new'
     end
   end
 
@@ -24,7 +25,7 @@ class RoomsController < ApplicationController
   end
 
   def update
-    if @room.update(params_room)
+    if @room.update(room_params)
       redirect_to rooms_path,notice:"編集しました"
     else
       render 'edit'
@@ -38,15 +39,12 @@ class RoomsController < ApplicationController
 
   private
 
-  def params_room
-    params.require(:room).permit(:name,:price,:address,:age,:comment)
+  def room_params
+    params.require(:room).permit(:name,:price,:address,:age,:comment,
+    places_attributes: [:id,:room_id,:train,:station,:walk])
   end
 
   def set_room
     @room = Room.find(params[:id])
   end
-
-
-
-
 end

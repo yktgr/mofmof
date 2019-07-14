@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  train: MyString
+  station: MyString
+  walk: 1
+  room: one
+
+two:
+  train: MyString
+  station: MyString
+  walk: 1
+  room: two

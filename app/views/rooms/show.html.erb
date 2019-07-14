@@ -1,17 +1,20 @@
 <h1>閲覧</h1>
   <table>
-    <tr><th>物件名:</th></tr>
-    <tr><td><%= @room.name %></td></tr>
-
-    <tr><th>賃料:</th></tr>
-    <tr><td><%=  @room.price %>円</td></tr>
-
-    <tr><th>住所:</th></tr>
-    <tr><td><%=  @room.address %></td></tr>
-
-    <tr><th>築年数:</th></tr>
-    <tr><td><%= @room.age %>年</td></tr>
-
-    <tr><th>備考:</th></tr>
-    <tr><td><%= @room.comment %></td></tr>
+    <tr><th>物件名:</th><td><%= @room.name %></td></tr>
+    <tr><th>賃料:</th><td><%=  @room.price %>円</td></tr>
+    <tr><th>住所:</th><td><%=  @room.address %></td></tr>
+    <tr><th>築年数:</th><td><%= @room.age %>年</td></tr>
+    <tr><th>備考:</th><td><%= @room.comment %></td></tr>
   </table>
+
+  <% @room.places.each_with_index do |place,number| %>
+    <table>
+      <h2>最寄り駅<%= number + 1 %></h2>
+      <tr><th>路線名:</th><td><%= place.train %></td></tr>
+      <tr><th>駅名:</th><td><%= place.station %></td></tr>
+      <tr><th>徒歩分数:</th><td><%=  place.walk %>分</td></tr>
+    </table>
+  <% end %>
+  
+  <%= link_to "編集",edit_room_path(@room.id) %>
+  <%= link_to "戻る", rooms_path %>
