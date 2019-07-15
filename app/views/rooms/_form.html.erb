@@ -1,3 +1,6 @@
+<% @room.errors.full_messages.each do |msg| %>
+  <div><%= msg %></div>
+<% end %>
     <%= form_for @room do |f| %>
     <div class = under_line>
         <li><%= f.label :物件名 %></li>
@@ -25,7 +28,7 @@
             <li><%= p.text_field :station %></li>
 
             <li><%= p.label :徒歩分数 %></li>
-            <li><%= p.text_field :walk %></li>
+            <li><%= p.text_field :walk %>分</li>
         <% end %>
         <li><%= f.submit %></li>
       <% end %>
