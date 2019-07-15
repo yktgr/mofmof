@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to rooms_path
+      redirect_to rooms_path,notice:"登録しました"
     else
       render 'new'
     end

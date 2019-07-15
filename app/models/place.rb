@@ -1,3 +1,6 @@
 class Place < ApplicationRecord
-  belongs_to :room,optional: true
+  validates :train, presence:true
+  validates :station, presence:true
+  validates :walk, presence:true
+  belongs_to :room, optional: true
 end
