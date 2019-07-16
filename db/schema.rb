@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190714073005) do
+ActiveRecord::Schema.define(version: 20190714071754) do
 
   create_table "places", force: :cascade do |t|
-    t.string   "train",      null: false
-    t.string   "station",    null: false
-    t.integer  "walk",       null: false
-    t.integer  "room_id",    null: false
+    t.string   "train"
+    t.string   "station"
+    t.integer  "walk"
+    t.integer  "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_places_on_room_id"

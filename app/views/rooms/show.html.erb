@@ -15,6 +15,5 @@
       <tr><th>徒歩分数</th><td><%=  place.walk %>分</td></tr>
     </table>
   <% end %>
-
-  <%= link_to "編集",edit_room_path(@room.id) %>
-  <%= link_to "戻る", rooms_path %>
+    <a><%= link_to "編集",edit_room_path(@room.id) %></a>
+    <a class = line><%= link_to "戻る", rooms_path %></a>
